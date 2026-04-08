@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Structural BIM Services | BSI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --brand-red: #dc2626;
+            --brand-black: #000000;
+            --brand-gray-light: #f3f4f6;
+            --brand-gray-divider: #cccccc;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        /* Hero Section Styling */
+        .hero-bg {
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9)), 
+                        url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Red Corner Brackets - Components */
+        .bsi-btn-corners {
+            position: relative;
+            background: #222;
+            color: white;
+            padding: 14px 28px;
+            display: inline-block;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-size: 0.75rem;
+            border: 1px solid #444;
+        }
+        .bsi-btn-corners::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            right: -2px;
+            width: 12px;
+            height: 12px;
+            border-top: 2px solid var(--brand-red);
+            border-right: 2px solid var(--brand-red);
+        }
+        .bsi-btn-corners::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: -2px;
+            width: 12px;
+            height: 12px;
+            border-bottom: 2px solid var(--brand-red);
+            border-left: 2px solid var(--brand-red);
+        }
+
+        .card-corners {
+            position: relative;
+            border: 1px solid #333;
+            background: #000;
+            padding: 2rem;
+            height: 100%;
+        }
+        .card-corners::before {
+            content: '';
+            position: absolute;
+            top: -1px;
+            left: -1px;
+            width: 25px;
+            height: 25px;
+            border-top: 3px solid var(--brand-red);
+            border-left: 3px solid var(--brand-red);
+        }
+        .card-corners::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            right: -1px;
+            width: 25px;
+            height: 25px;
+            border-bottom: 3px solid var(--brand-red);
+            border-right: 3px solid var(--brand-red);
+        }
+
+        /* Section Dividers */
+        .divider-red-gray {
+            width: 120px;
+            height: 4px;
+            background: #e5e7eb;
+            position: relative;
+            margin-top: 0.5rem;
+        }
+        .divider-red-gray::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 40%;
+            height: 100%;
+            background: var(--brand-red);
+        }
+
+        .divider-red-gray-center {
+            width: 120px;
+            height: 4px;
+            background: #444;
+            position: relative;
+            margin: 0.5rem auto 0;
+        }
+        .divider-red-gray-center::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 30%;
+            width: 40%;
+            height: 100%;
+            background: var(--brand-red);
+        }
+
+        /* Stats Cards */
+        .stat-box {
+            background: #1a1a1a;
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+            border: 1px solid #333;
+        }
+
+        /* Advantages Grid */
+        .adv-card {
+            border: 1.5px solid #d1d5db;
+            border-radius: 8px;
+            padding: 2.5rem 1.5rem;
+            position: relative;
+            background: #fff;
+        }
+        .adv-number {
+            position: absolute;
+            top: 0.5rem;
+            right: 1rem;
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: #e5e7eb;
+            line-height: 1;
+        }
+
+        .nav-link::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: var(--brand-red);
+            transition: width .3s;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="bg-white text-black">
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-black shadow-lg border-b border-red-600">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <i class="fas fa-cubes text-3xl text-red-600 mr-2"></i>
+                        <span class="text-2xl font-bold tracking-tight text-white uppercase">Structural<span class="text-red-600">Bim</span></span>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-8">
+                    <a href="index.html" class="nav-link text-white text-xs uppercase tracking-widest font-bold hover:text-red-600 transition">Home</a>
+                    <a href="#" class="nav-link text-red-600 text-xs uppercase tracking-widest font-bold transition">Blog</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-bg min-h-[65vh] flex flex-col justify-center items-center text-white px-4 relative">
+        <div class="max-w-4xl mx-auto text-center mt-10 mb-16">
+            <p class="text-lg md:text-xl font-medium mb-10 leading-relaxed max-w-3xl mx-auto">
+                Navigating around the challenges of Structural Engineering, improve on site productivity and communication with our BIM models. Unlock faster project completion and huge potential cost reduction. Let us empower your project with our proven Structural BIM Services.
+            </p>
+            <div class="mb-4">
+                <div class="bsi-btn-corners cursor-pointer">
+                    Consult Our Structural BIM Experts
+                </div>
+            </div>
+        </div>
+
+        <!-- Stat Counter Overlay -->
+        <div class="absolute bottom-0 translate-y-1/2 w-full max-w-6xl px-4 grid grid-cols-2 md:grid-cols-4 gap-4 z-10">
+            <div class="stat-box">
+                <div class="text-4xl font-bold">18<span class="text-red-600">+</span></div>
+                <div class="text-[10px] uppercase tracking-widest text-gray-400 mt-2 font-bold">Years Experience</div>
+            </div>
+            <div class="stat-box">
+                <div class="text-4xl font-bold">25<span class="text-red-600">+</span></div>
+                <div class="text-[10px] uppercase tracking-widest text-gray-400 mt-2 font-bold">Countries</div>
+            </div>
+            <div class="stat-box">
+                <div class="text-4xl font-bold">300<span class="text-red-600">+</span></div>
+                <div class="text-[10px] uppercase tracking-widest text-gray-400 mt-2 font-bold">Companies</div>
+            </div>
+            <div class="stat-box">
+                <div class="text-4xl font-bold">5000<span class="text-red-600">+</span></div>
+                <div class="text-[10px] uppercase tracking-widest text-gray-400 mt-2 font-bold">Projects</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Intro Content -->
+    <section class="pt-48 pb-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-[10px] text-gray-500 uppercase mb-4 font-bold tracking-widest flex items-center">
+                Home <i class="fas fa-chevron-right text-[7px] mx-2"></i> Structural BIM Services
+            </div>
+            
+            <h1 class="text-3xl font-black text-black uppercase tracking-tight">Structural BIM Services</h1>
+            <div class="divider-red-gray mb-10"></div>
+            
+            <div class="space-y-6 text-gray-700 text-sm leading-relaxed max-w-6xl">
+                <p>
+                    At <span class="text-black font-bold">BSI</span>, we identify exactly what your project needs, our structural Revit models are tailor made translating your design into a powerful tool for better coordination on site. For nearly two decades, we have served our clients in USA, UK, Europe, Canada, and Australia in executing projects with ease.
+                </p>
+                <p>
+                    Our Structural BIM Services signify high level of detailing required for fabrication of components and on-site installation. We ensure that the designs are validated while we create 3D models to ensure less redundancy during construction. Our quality centric approach with planned and time bound execution makes us one of the most consistent Structural BIM Companies in India.
+                </p>
+                <p>
+                    With a global foothold, we have emerged as strong players in the field of Structural BIM Modeling Services. Trusted by Steel fabricators, Structural Design firms, and Contractors for their residential, commercial and industrial structure projects, our Structural BIM Services elevate project outcomes.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our BIM Structural Services (Dark Section) -->
+    <section class="py-24 bg-black text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl font-black uppercase tracking-tight">Our BIM Structural Services</h2>
+            <div class="divider-red-gray-center mb-6"></div>
+            <p class="text-gray-400 font-medium mb-16 text-sm">We have a BIM solution for everything</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="card-corners">
+                    <h3 class="text-xl font-bold mb-6 uppercase tracking-wide">Structural BIM <br> Modeling</h3>
+                    <p class="text-[12px] text-gray-300 leading-relaxed font-light">
+                        Crafting comprehensive BIM Structural models that encompass vital components, from foundations and beams to columns, trusses, anchor bolts, and purlins. Our proficiency spans across LOD 100 through LOD 500.
+                    </p>
+                </div>
+                <div class="card-corners">
+                    <h3 class="text-xl font-bold mb-6 uppercase tracking-wide">Structural Quantity <br> Takeoff</h3>
+                    <p class="text-[12px] text-gray-300 leading-relaxed font-light">
+                        Our expert team extracts comprehensive takeoffs and schedules from your structural models. These invaluable resources empower you to streamline material orders and optimize manpower planning.
+                    </p>
+                </div>
+                <div class="card-corners">
+                    <h3 class="text-xl font-bold mb-8 uppercase tracking-wide">Structural Steel Shop <br> Drawings</h3>
+                    <p class="text-[12px] text-gray-300 leading-relaxed font-light">
+                        We leverage cutting-edge technology to extract detailed drawings from our comprehensive Structural BIM Models. Every drawing we provide adheres meticulously to industry steel detailing standards.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Advantages Section -->
+    <section class="py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-black text-black mb-4 leading-tight">
+                Outsourcing Structural BIM Services to us will give you these advantages:
+            </h2>
+            <div class="divider-red-gray-center mb-16"></div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-left">
+                <div class="adv-card">
+                    <span class="adv-number">01</span>
+                    <h4 class="text-lg font-bold mb-3">Improved Collaboration</h4>
+                    <p class="text-gray-600 text-[13px] leading-relaxed">Ability to work on a single, centralized BIM model for better coordination.</p>
+                </div>
+                <div class="adv-card">
+                    <span class="adv-number">02</span>
+                    <h4 class="text-lg font-bold mb-3">Superior visualization</h4>
+                    <p class="text-gray-600 text-[13px] leading-relaxed">Enhanced views of structural elements, making modifications easier to visualize.</p>
+                </div>
+                <div class="adv-card">
+                    <span class="adv-number">03</span>
+                    <h4 class="text-lg font-bold mb-3">Structural Mapping</h4>
+                    <p class="text-gray-600 text-[13px] leading-relaxed">Avoid possible collisions between structural and building systems virtual model.</p>
+                </div>
+                <div class="adv-card">
+                    <span class="adv-number">04</span>
+                    <h4 class="text-lg font-bold mb-3">Accurate Quantity takeoffs</h4>
+                    <p class="text-gray-600 text-[13px] leading-relaxed">Precise quantity take-offs aiding in cost estimation and procurement planning.</p>
+                </div>
+                <div class="adv-card">
+                    <span class="adv-number">05</span>
+                    <h4 class="text-lg font-bold mb-3">Sustainability</h4>
+                    <p class="text-gray-600 text-[13px] leading-relaxed">Evaluating environmental impact and helping to meet sustainability goals.</p>
+                </div>
+                <div class="adv-card">
+                    <span class="adv-number">06</span>
+                    <h4 class="text-lg font-bold mb-3">Enhanced Productivity</h4>
+                    <p class="text-gray-600 text-[13px] leading-relaxed">Automate repetitive tasks, freeing up effort for more productive activities.</p>
+                </div>
+                <div class="adv-card">
+                    <span class="adv-number">07</span>
+                    <h4 class="text-lg font-bold mb-3">Improved Safety</h4>
+                    <p class="text-gray-600 text-[13px] leading-relaxed">We conduct thorough structural analysis to ensure safety and stability.</p>
+                </div>
+                <div class="adv-card">
+                    <span class="adv-number">08</span>
+                    <h4 class="text-lg font-bold mb-3">Code compliance</h4>
+                    <p class="text-gray-600 text-[13px] leading-relaxed">BIM models constructed in accordance with guidelines of project's location.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BCR Liberia Project Showcase (Centered, Image Removed) -->
+    <section class="py-32 bg-white overflow-hidden">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl font-bold text-gray-800 mb-2 leading-tight uppercase">Structural BIM Project - <span class="text-red-600">BCR Liberia</span></h2>
+            <div class="divider-red-gray-center mb-8"></div>
+            <p class="text-gray-600 text-sm leading-relaxed mb-10 mx-auto max-w-2xl italic">
+                Structural BIM Modeling, Architectural and MEP BIM Modeling in LOD 350, MEP Clash Detection for existing and new buildings. This project showcases our multi-disciplinary coordination in complex environments.
+            </p>
+            <div class="bsi-btn-corners cursor-pointer">
+                OUR PROJECT
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white pt-20 pb-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row gap-12 lg:gap-24 mb-16">
+                <div class="lg:w-1/3">
+                    <div class="mb-6 flex flex-col">
+                        <div class="flex items-center text-4xl font-black italic tracking-tighter">
+                            <span class="border-4 border-white px-1 mr-1">BSI</span>
+                        </div>
+                        <span class="text-red-600 font-bold text-sm uppercase mt-1 tracking-widest">BIM Services India</span>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed mt-4">We create information-rich BIM models that adds value throughout the building's lifecycle.</p>
+                </div>
+                <div class="flex-1">
+                    <h3 class="text-2xl font-bold uppercase tracking-tight mb-4 relative inline-block">
+                        Quick Links
+                        <span class="absolute -bottom-2 left-0 w-full h-[2px] bg-red-600"></span>
+                    </h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 mt-6">
+                        <div class="py-2 border-b border-gray-900 text-gray-400 text-sm">Architectural BIM Services</div>
+                        <div class="py-2 border-b border-gray-900 text-gray-400 text-sm">Structural BIM Services</div>
+                        <div class="py-2 border-b border-gray-900 text-gray-400 text-sm">MEP BIM Services</div>
+                        <div class="py-2 border-b border-gray-900 text-gray-400 text-sm">Scan to BIM Services</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-12 pb-16">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 text-sm text-gray-400">
+                    <div><h4 class="text-white font-bold mb-2 uppercase text-xs tracking-widest">USA/Canada</h4><p>+1 510 680 3390</p></div>
+                    <div><h4 class="text-white font-bold mb-2 uppercase text-xs tracking-widest">UK</h4><p>+44 33 3011 9045</p></div>
+                    <div><h4 class="text-white font-bold mb-2 uppercase text-xs tracking-widest">Australia</h4><p>+61 48 999 7117</p></div>
+                    <div><h4 class="text-white font-bold mb-2 uppercase text-xs tracking-widest">E-mail</h4><p class="text-blue-500">services@bimservicesindia.com</p></div>
+                </div>
+            </div>
+
+            <div class="flex justify-center space-x-4 mt-8">
+                <div class="w-10 h-10 bg-[#e66060] rounded-full flex items-center justify-center text-white/80"><i class="fab fa-facebook-f text-sm"></i></div>
+                <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-black font-bold"><span class="text-[10px]">in</span></div>
+                <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-black"><i class="fab fa-pinterest-p text-sm"></i></div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
